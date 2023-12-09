@@ -30,6 +30,10 @@
 
     <!-- Template Main CSS File -->
     <link href=" {{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+    {{-- sweet alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
@@ -124,6 +128,9 @@
             <span><a class="nav-link" href="{{ route('candidate-create') }}"><i class='bx bx-user-circle'></i>Add
                     Candidate</a></span>
         </li>
+        <li class="nav-item">
+            <span><a class="nav-link" href="{{ route('candidate') }}"><i class='bx bx-food-menu'></i>View Candidates</a></span>
+        </li>
         {{-- <li class="nav-item">
             <span><a class="nav-link" href="updateUser.php"><i class='bx bx-clipboard'></i>Update User</a></span>
             </a>
@@ -171,7 +178,31 @@
 
 </aside>
 <!-- End Sidebar-->
+@if ($errors->any())
+    {{ $showError = '' }}
+    @foreach ($errors->all() as $err)
+        <?php $showError .= "$err \n"; ?>
+    @endforeach
+    <input type="hidden" id="err_inpt" value="{{ $showError }}">
+    <script>
+        let err = document.getElementById('err_inpt').value;
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: err,
+        });
+    </script>
+@endif
 
+@if (session('success'))
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "{{ session('success') }}",
+            icon: "success"
+        });
+    </script>
+@endif
 
 <main id="main" class="main">
     @switch(Route::currentRouteName())
@@ -185,13 +216,36 @@
                 </nav>
             </div><!-- End Page Title -->
         @break
+
         @case('candidate-create')
             <div class="pagetitle">
-                <h1>Add Candidate</h1>
+                <h1>Manage Candidate</h1>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
                         <li class="breadcrumb-item">Add candidate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+        @case('candidate')
+            <div class="pagetitle">
+                <h1>Manage Candidate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">View candidate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+        @case('candidate-delete')
+            <div class="pagetitle">
+                <h1>Manage Candidate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">Delete candidate</li>
                     </ol>
                 </nav>
             </div><!-- End Page Title -->
@@ -212,32 +266,6 @@
     @yield('content')
 
 </main>
-
-@if ($errors->any())
-    {{ $showError = '' }}
-    @foreach ($errors->all() as $err)
-        <?php $showError .= "$err \n"; ?>
-    @endforeach
-    <input type="hidden" id="err_inpt" value="{{ $showError }}">
-    <script>
-        let err = document.getElementById('err_inpt').value;
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: err,
-        });
-    </script>
-@endif
-
-@if (session('success'))
-    <script>
-        Swal.fire({
-            title: "Done!",
-            text: "{{ session('success') }}",
-            icon: "success"
-        });
-    </script>
-@endif
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
