@@ -31,7 +31,6 @@
     <!-- Template Main CSS File -->
     <link href=" {{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
-
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -115,16 +114,17 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link" href="index.php">
+            <a class="nav-link" href="{{ route('admin') }}">
                 <span><i class="bi bi-grid">Dashboard</span></i>
             </a>
         </li>
-        <li class="nav-heading">Users</li>
+        <li class="nav-heading">Candidates</li>
 
         <li class="nav-item">
-            <span><a class="nav-link" href="addUser.php"><i class='bx bx-user-circle'></i>Add User</a></span>
+            <span><a class="nav-link" href="{{ route('candidate-create') }}"><i class='bx bx-user-circle'></i>Add
+                    Candidate</a></span>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <span><a class="nav-link" href="updateUser.php"><i class='bx bx-clipboard'></i>Update User</a></span>
             </a>
         </li>
@@ -166,7 +166,7 @@
             <span><a class="nav-link" href="allCertificates.php"><i class='bx bx-data'></i>All
                     Certificates</a></span>
             </a>
-        </li>
+        </li> --}}
     </ul>
 
 </aside>
@@ -174,6 +174,40 @@
 
 
 <main id="main" class="main">
+    @switch(Route::currentRouteName())
+        @case('admin')
+            <div class="pagetitle">
+                <h1>Dashboard</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+        @case('candidate-create')
+            <div class="pagetitle">
+                <h1>Add Candidate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">Add candidate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+
+        @default
+            <div class="pagetitle">
+                <h1></h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        {{-- <li class="breadcrumb-item"></li> --}}
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+    @endswitch
 
     @yield('content')
 

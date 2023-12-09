@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +23,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('admin', function(){
+    Route::get('admin', function () {
         return view('admin.index');
-    });
+    })->name("admin");
+
+
+    // ------ Candidates ------
+    Route::get("candidate/add", [CandidateController::class, 'create'])->name("candidate-create");
+    Route::post("candidate/add", [CandidateController::class, 'store'])->name("candidate-store");
 });
 
 
@@ -44,4 +50,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
