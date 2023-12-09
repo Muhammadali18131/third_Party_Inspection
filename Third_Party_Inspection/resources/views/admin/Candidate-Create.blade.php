@@ -10,11 +10,7 @@
                 <div class="card">
                     <div class="card-body pt-3">
                         <!-- Bordered Tabs -->
-                        <ul class="nav nav-tabs nav-tabs-bordered">
-                            <li class="nav-item">
-                                <button class="nav-link">Insert</button>
-                            </li>
-                        </ul>
+                        <h5 class="card-title">Add new candidate</h5>
                         <div class="tab-content pt-2">
 
                             <!-- Profile Insert Form -->

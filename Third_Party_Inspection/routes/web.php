@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +29,7 @@ Route::middleware('auth')->group(function () {
     })->name("admin");
 
 
-    // ------ Candidates ------
+    // ------ Candidates ------//
     Route::get("candidate/add", [CandidateController::class, 'create'])->name("candidate-create");
     Route::post("candidate/add", [CandidateController::class, 'store'])->name("candidate-store");
     Route::get("candidate", [CandidateController::class, 'index'])->name("candidate");
@@ -36,6 +37,15 @@ Route::middleware('auth')->group(function () {
     Route::put("candidate/edit/{id}", [CandidateController::class, 'update'])->name("candidate-update");
     Route::get("candidate/delete/{id}", [CandidateController::class, 'delete'])->name("candidate-delete");
     Route::delete("candidate/delete/{id}", [CandidateController::class, 'destroy'])->name("candidate-destroy");
+
+    // ------ Candidates ------//
+    Route::get("certificate/add", [CertificateController::class, 'create'])->name("certificate-create");
+    Route::post("certificate/add", [CertificateController::class, 'store'])->name("certificate-store");
+    Route::get("certificate", [CertificateController::class, 'index'])->name("certificate");
+    Route::get("certificate/edit/{id}", [CertificateController::class, 'edit'])->name("certificate-edit");
+    Route::put("certificate/edit/{id}", [CertificateController::class, 'update'])->name("certificate-update");
+    Route::get("certificate/delete/{id}", [CertificateController::class, 'delete'])->name("certificate-delete");
+    Route::delete("certificate/delete/{id}", [CertificateController::class, 'destroy'])->name("certificate-destroy");
 });
 
 

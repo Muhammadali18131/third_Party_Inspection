@@ -129,51 +129,19 @@
                     Candidate</a></span>
         </li>
         <li class="nav-item">
-            <span><a class="nav-link" href="{{ route('candidate') }}"><i class='bx bx-food-menu'></i>View Candidates</a></span>
+            <span><a class="nav-link" href="{{ route('candidate') }}"><i class='bx bx-food-menu'></i>View
+                    Candidates</a></span>
         </li>
-        {{-- <li class="nav-item">
-            <span><a class="nav-link" href="updateUser.php"><i class='bx bx-clipboard'></i>Update User</a></span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <span><a class="nav-link" href="deleteUser.php"><i class='bx bx-cut'></i>Delete User</a></span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <span><a class="nav-link" href="viewUser.php"><i class='bx bx-laptop'></i>view User</a></span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <span><a class="nav-link" href="allUsers.php"><i class='bx bx-food-menu'></i>All User</a></span>
-            </a>
-        </li>
-
         <li class="nav-heading">Certificates</li>
 
         <li class="nav-item">
-            <span><a class="nav-link" href="addCertificate.php"><i class='bx bx-message-square-add'></i>Add
-                    Certificate</a></span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <span><a class="nav-link" href="updateCertificate.php"><i class='bx bx-edit-alt'></i>Update
-                    Certificate</a></span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <span><a class="nav-link" href="deleteCertificate.php"><i class='bx bx-window-close'></i>Delete
-                    Certificate</a></span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <span><a class="nav-link" href="viewCertificate.php"><i class="bi bi-menu-button-wide"></i>view
+            <span><a class="nav-link" href="{{ route('certificate-create') }}"><i class='bx bx-message-square-add'></i>Add
                     Certificate</a></span>
         </li>
         <li class="nav-item">
-            <span><a class="nav-link" href="allCertificates.php"><i class='bx bx-data'></i>All
+            <span><a class="nav-link" href="{{ route('certificate') }}"><i class='bx bx-food-menu'></i>View
                     Certificates</a></span>
-            </a>
-        </li> --}}
+        </li>
     </ul>
 
 </aside>
@@ -228,6 +196,7 @@
                 </nav>
             </div><!-- End Page Title -->
         @break
+
         @case('candidate')
             <div class="pagetitle">
                 <h1>Manage Candidate</h1>
@@ -239,6 +208,19 @@
                 </nav>
             </div><!-- End Page Title -->
         @break
+
+        @case('candidate-edit')
+            <div class="pagetitle">
+                <h1>Manage Candidate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">Edit candidate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+
         @case('candidate-delete')
             <div class="pagetitle">
                 <h1>Manage Candidate</h1>
@@ -246,6 +228,53 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
                         <li class="breadcrumb-item">Delete candidate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+        @case('certificate-create')
+            <div class="pagetitle">
+                <h1>Manage certificate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">Add certificate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+
+        @case('certificate')
+            <div class="pagetitle">
+                <h1>Manage certificate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">View certificate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+
+        @case('certificate-edit')
+            <div class="pagetitle">
+                <h1>Manage certificate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">Edit certificate</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+        @break
+
+        @case('certificate-delete')
+            <div class="pagetitle">
+                <h1>Manage certificate</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item">Delete certificate</li>
                     </ol>
                 </nav>
             </div><!-- End Page Title -->

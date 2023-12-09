@@ -11,9 +11,9 @@
 
 
                     <div class="card-body">
-                        <h5 class="card-title">All Candidates</h5>
+                        <h5 class="card-title">All Certifiate</h5>
                         <div class="text-end">
-                            <a href="{{ route('candidate-create') }}" class="btn btn-primary">Add new</a>
+                            <a href="{{ route('certificate-create') }}" class="btn btn-primary">Add new</a>
                         </div>
                         <table class="table table-borderless datatable">
                             <thead>
@@ -29,13 +29,14 @@
                                 @foreach ($row as $r)
                                     <tr>
                                         <th scope="row">#{{ str_pad($r->id, 5, '0', STR_PAD_LEFT) }}</a></th>
-                                        <td><a href="{{ route('candidate-edit', ['id' => $r->id]) }}" class="text-primary">{{ $r->field3 }}</a></td>
+                                        <td><a href="{{ route('certificate-edit', ['id' => $r->id]) }}"
+                                                class="text-primary">{{ $r->field3 }}</a></td>
                                         <td>{{ $r->field4 }}</td>
                                         <td>{{ $r->field5 }}</td>
                                         <td>
-                                            <a href="{{ route('candidate-edit', ['id' => $r->id]) }}"
+                                            <a href="{{ route('certificate-edit', ['id' => $r->id]) }}"
                                                 class="btn btn-warning btn-sm">Edit</a>
-                                            <a href="{{ route('candidate-delete', ['id' => $r->id]) }}"
+                                            <a href="{{ route('certificate-delete', ['id' => $r->id]) }}"
                                                 class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
