@@ -60,17 +60,15 @@
                                             <div class="col-lg-9 col-md-8">{{ $row->iqama }}</div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-4 label">Summary</div>
-                                            <div class="col-lg-9 col-md-8">{{ $row->summary }}</div>
-                                        </div>
+                                        {{-- <img src="{{!! DNS2D::getBarCodeHTML("Hello", "QRCODE") !!}}" alt=""> --}}
+
                                     </div>
-                                    <div class="col-md-2 col-sm-12">
-                                        <div class="card">
-                                            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                                                <img src="{{ asset('assets/img/qr-code.png') }}" alt="Image Not found!!!"
-                                                    class="bx-square-rounded">
-                                            </div>
+                                    <div class="col-12">
+                                        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                                            <?php
+                                            $certificateLink = 'localhost:8000/assets/certificates/' . $row->certificate;
+                                            echo DNS2D::getBarcodeHTML("$certificateLink", 'QRCODE');
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
