@@ -33,10 +33,29 @@ class Certificate extends Model
         ->get();
         return $record[0];
     }
+    static function CertificateByCandidateId($id)
+    {
+        $record = DB::table("candidates as can")
+        ->leftJoin("certificates as cer", "cer.candidate_id", "=" ,"can.id")
+        ->select("cer.*", "cer.id as certificate_id", "can.*")
+        ->where("can.id", "$id")
+        ->get();
+        return $record[0];
+    }
     static function CertificateWithCandidate_all()
     {
         $record = DB::table("candidates as can")
         ->join("certificates as cer", "cer.candidate_id", "can.id")
+        ->select("cer.*", "cer.id as certificate_id", "can.*")
+        ->get();
+        
+        return $record;
+    }
+
+    static function CandidateWithCertificate_all()
+    {
+        $record = DB::table("certificates as cer")
+        ->leftJoin("candidates as can", "cer.candidate_id", "can.id")
         ->select("cer.*", "cer.id as certificate_id", "can.*")
         ->get();
         

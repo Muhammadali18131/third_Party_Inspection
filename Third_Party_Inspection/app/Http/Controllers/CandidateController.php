@@ -53,7 +53,7 @@ class CandidateController extends Controller
     public function show(string $id)
     {
         $row = Candidate::findOrFail($id);
-        return view("admin.Candidate-Show", compact("row"));
+        return view("admin.CandidateInspection", compact("row"));
     }
 
     /**
@@ -61,7 +61,7 @@ class CandidateController extends Controller
      */
     public function edit(string $id)
     {
-        $row = Candidate::find($id);
+        $row = Certificate::CertificateByCandidateId($id);
         return view("admin.Candidate-Edit", compact("row"));
     }
 

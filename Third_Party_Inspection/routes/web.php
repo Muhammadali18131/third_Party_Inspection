@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ProfileController;
@@ -24,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('admin', function () {
-        return view('admin.index');
-    })->name("admin");
+    Route::get("admin", [AdminController::class, 'index'])->name("admin");
 
 
     // ------ Candidates ------//
