@@ -33,118 +33,57 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="field1" class="col-md-4 col-lg-3 col-form-label">Field 1</label>
+                                    <label for="id" class="col-md-4 col-lg-3 col-form-label">ID</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field1" type="text" class="form-control" id="field1" readonly
-                                            value="{{ $row->field1 }}">
+                                        <input name="id" type="text" class="form-control" readonly id="id" value="{{ $row->id }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="field2" class="col-md-4 col-lg-3 col-form-label">Field 2</label>
+                                    <label for="name" class="col-md-4 col-lg-3 col-form-label">Name</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field2" type="text" class="form-control" id="field2" readonly
-                                            value="{{ $row->field2 }}">
+                                        <input name="name" type="text" class="form-control" readonly id="name" value="{{ $row->name }}">
                                     </div>
                                 </div>
+                                
                                 <div class="row mb-3">
-                                    <label for="field3" class="col-md-4 col-lg-3 col-form-label">Field 3</label>
+                                    <label for="fname" class="col-md-4 col-lg-3 col-form-label">Father's Name</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field3" type="text" class="form-control" id="field3" readonly
-                                            value="{{ $row->field3 }}">
+                                        <input name="fname" type="text" class="form-control" readonly id="fname" value="{{ $row->fname }}">
                                     </div>
                                 </div>
+                                
                                 <div class="row mb-3">
-                                    <label for="field4" class="col-md-4 col-lg-3 col-form-label">Field 4</label>
+                                    <label for="phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field4" type="text" class="form-control" id="field4" readonly
-                                            value="{{ $row->field4 }}">
+                                        <input name="phone" type="text" class="form-control" readonly id="phone" value="{{ $row->phone }}">
                                     </div>
                                 </div>
+                                
                                 <div class="row mb-3">
-                                    <label for="field5" class="col-md-4 col-lg-3 col-form-label">Field 5</label>
+                                    <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field5" type="text" class="form-control" id="field5" readonly
-                                            value="{{ $row->field5 }}">
+                                        <input name="email" type="text" class="form-control" readonly id="email" value="{{ $row->email }}">
                                     </div>
                                 </div>
-
+                                
                                 <div class="row mb-3">
-                                    <label for="field6" class="col-md-4 col-lg-3 col-form-label">Field 6</label>
+                                    <label for="address" class="col-md-4 col-lg-3 col-form-label">Address</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field6" type="text" class="form-control" id="field6" readonly
-                                            value="{{ $row->field6 }}">
+                                        <input name="address" type="text" class="form-control" readonly id="address" value="{{ $row->address }}">
                                     </div>
                                 </div>
-
+                                
                                 <div class="row mb-3">
-                                    <label for="field7" class="col-md-4 col-lg-3 col-form-label">Field 7</label>
+                                    <label for="iqama" class="col-md-4 col-lg-3 col-form-label">Iqama</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field7" type="text" class="form-control" id="field7" readonly
-                                            value="{{ $row->field7 }}">
+                                        <input name="iqama" type="text" class="form-control" readonly id="iqama" value="{{ $row->iqama }}">
                                     </div>
                                 </div>
-
+                                
                                 <div class="row mb-3">
-                                    <label for="field8" class="col-md-4 col-lg-3 col-form-label">Field 8</label>
+                                    <label for="summary" class="col-md-4 col-lg-3 col-form-label">Summary</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field8" type="text" class="form-control" id="field8" readonly
-                                            value="{{ $row->field8 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field9" class="col-md-4 col-lg-3 col-form-label">Field 9</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field9" type="text" class="form-control" id="field9" readonly
-                                            value="{{ $row->field9 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field10" class="col-md-4 col-lg-3 col-form-label">Field 10</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field10" type="text" class="form-control" id="field10"
-                                            readonly value="{{ $row->field10 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field11" class="col-md-4 col-lg-3 col-form-label">Field 11</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field11" type="email" class="form-control" id="field11"
-                                            readonly value="{{ $row->field11 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field12" class="col-md-4 col-lg-3 col-form-label">Field 12</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field12" type="text" class="form-control" id="field12"
-                                            readonly value="{{ $row->field12 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field13" class="col-md-4 col-lg-3 col-form-label">Field 13</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field13" type="text" class="form-control" id="field13"
-                                            readonly value="{{ $row->field13 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field14" class="col-md-4 col-lg-3 col-form-label">Field 14</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field14" type="text" class="form-control" id="field14"
-                                            readonly value="{{ $row->field14 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field15" class="col-md-4 col-lg-3 col-form-label">Field 15</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field15" type="text" class="form-control" id="field15"
-                                            readonly value="{{ $row->field15 }}">
+                                        <input name="summary" type="text" class="form-control" readonly id="summary" value="{{ $row->summary }}">
                                     </div>
                                 </div>
 

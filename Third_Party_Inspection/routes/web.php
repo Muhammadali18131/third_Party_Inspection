@@ -48,12 +48,15 @@ Route::middleware('auth')->group(function () {
     Route::delete("certificate/delete/{id}", [CertificateController::class, 'destroy'])->name("certificate-destroy");
 });
 
+// ------ view certificate and user info ------//
+Route::get("inspection/{id}", [CandidateController::class, 'show'])->name("candidateInspection-show");
+
 
 
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("home");
 
 Route::get('/dashboard', function () {
     return view('dashboard');

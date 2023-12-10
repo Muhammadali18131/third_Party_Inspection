@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidate;
+use App\Models\Certificate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -31,21 +32,13 @@ class CandidateController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'field1' => 'required',
-            'field2' => 'required',
-            'field3' => 'required',
-            'field4' => 'required',
-            'field5' => 'required',
-            'field6' => 'required',
-            'field7' => 'required',
-            'field8' => 'required',
-            'field9' => 'required',
-            'field10' => 'required',
-            'field11' => 'required',
-            'field12' => 'required',
-            'field13' => 'required',
-            'field14' => 'required',
-            'field15' => 'required',
+            'name' => 'required',
+            'fname' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'iqama' => 'required',
+            'summary' => 'required',
         ]);
         $filename = Candidate::UploadImg($request);
         $data['profile_img'] = $filename;
@@ -59,7 +52,8 @@ class CandidateController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $row = Candidate::findOrFail($id);
+        return view("admin.Candidate-Show", compact("row"));
     }
 
     /**
@@ -77,21 +71,13 @@ class CandidateController extends Controller
     public function update(Request $request, string $id)
     {
         $data = $request->validate([
-            'field1' => 'required',
-            'field2' => 'required',
-            'field3' => 'required',
-            'field4' => 'required',
-            'field5' => 'required',
-            'field6' => 'required',
-            'field7' => 'required',
-            'field8' => 'required',
-            'field9' => 'required',
-            'field10' => 'required',
-            'field11' => 'required',
-            'field12' => 'required',
-            'field13' => 'required',
-            'field14' => 'required',
-            'field15' => 'required',
+            'name' => 'required',
+            'fname' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'iqama' => 'required',
+            'summary' => 'required',
         ]);
 
         $record = Candidate::find($id);

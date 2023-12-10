@@ -33,123 +33,57 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="field1" class="col-md-4 col-lg-3 col-form-label">Field 1</label>
+                                    <label for="name" class="col-md-4 col-lg-3 col-form-label">Name</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field1" type="text" class="form-control" id="field1"
-                                            value="{{ old('field1') }}">
+                                        <input name="name" type="text" class="form-control" id="name"
+                                            value="{{ old('name') }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="field2" class="col-md-4 col-lg-3 col-form-label">Field 2</label>
+                                    <label for="fname" class="col-md-4 col-lg-3 col-form-label">Father's Name</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field2" type="text" class="form-control" id="field2"
-                                            value="{{ old('field2') }}">
+                                        <input name="fname" type="text" class="form-control" id="fname"
+                                            value="{{ old('fname') }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="field3" class="col-md-4 col-lg-3 col-form-label">Field 3</label>
+                                    <label for="phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field3" type="text" class="form-control" id="field3"
-                                            value="{{ old('field3') }}">
+                                        <input name="phone" type="text" class="form-control" id="phone"
+                                            value="{{ old('phone') }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="field4" class="col-md-4 col-lg-3 col-form-label">Field 4</label>
+                                    <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field4" type="text" class="form-control" id="field4"
-                                            value="{{ old('field4') }}">
+                                        <input name="email" type="email" class="form-control" id="email"
+                                            value="{{ old('email') }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="field5" class="col-md-4 col-lg-3 col-form-label">Field 5</label>
+                                    <label for="address" class="col-md-4 col-lg-3 col-form-label">Address</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field5" type="text" class="form-control" id="field5"
-                                            value="{{ old('field5') }}">
+                                        <input name="address" type="text" class="form-control" id="address"
+                                            value="{{ old('address') }}">
                                     </div>
                                 </div>
-
                                 <div class="row mb-3">
-                                    <label for="field6" class="col-md-4 col-lg-3 col-form-label">Field 6</label>
+                                    <label for="iqama" class="col-md-4 col-lg-3 col-form-label">Iqama</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field6" type="text" class="form-control" id="field6"
-                                            value="{{ old('field6') }}">
+                                        <input name="iqama" type="text" class="form-control" id="iqama"
+                                            value="{{ old('iqama') }}">
                                     </div>
                                 </div>
-
+                                
                                 <div class="row mb-3">
-                                    <label for="field7" class="col-md-4 col-lg-3 col-form-label">Field 7</label>
+                                    <label for="summary" class="col-md-4 col-lg-3 col-form-label">Summary</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field7" type="text" class="form-control" id="field7"
-                                            value="{{ old('field7') }}">
+                                        <input name="summary" type="text" class="form-control" id="summary"
+                                            value="{{ old('summary') }}">
                                     </div>
                                 </div>
-
-                                <div class="row mb-3">
-                                    <label for="field8" class="col-md-4 col-lg-3 col-form-label">Field 8</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field8" type="text" class="form-control" id="field8"
-                                            value="{{ old('field8') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field9" class="col-md-4 col-lg-3 col-form-label">Field 9</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field9" type="text" class="form-control" id="field9"
-                                            value="{{ old('field9') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field10" class="col-md-4 col-lg-3 col-form-label">Field 10</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field10" type="text" class="form-control" id="field10"
-                                            value="{{ old('field10') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field11" class="col-md-4 col-lg-3 col-form-label">Field 11</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field11" type="email" class="form-control" id="field11"
-                                            value="{{ old('field11') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field12" class="col-md-4 col-lg-3 col-form-label">Field 12</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field12" type="text" class="form-control" id="field12"
-                                            value="{{ old('field12') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field13" class="col-md-4 col-lg-3 col-form-label">Field 13</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field13" type="text" class="form-control" id="field13"
-                                            value="{{ old('field13') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field14" class="col-md-4 col-lg-3 col-form-label">Field 14</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field14" type="text" class="form-control" id="field14"
-                                            value="{{ old('field14') }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field15" class="col-md-4 col-lg-3 col-form-label">Field 15</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field15" type="text" class="form-control" id="field15"
-                                            value="{{ old('field15') }}">
-                                    </div>
-                                </div>
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                <div class="text-end">
+                                    <button type="submit" class="btn-lg btn btn-primary">Save</button>
                                 </div>
                             </form>
                             <!-- End Profile Insert Form -->

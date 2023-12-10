@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Certificate;
+use App\Models\Candidate;
 use Illuminate\Support\Facades\File;
 
 class CertificateController extends Controller
@@ -13,7 +14,7 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        $row = Certificate::all();
+        $row = Certificate::CertificateWithCandidate_all();
         return view("admin.Certificate", compact('row'));
     }
 
@@ -22,7 +23,8 @@ class CertificateController extends Controller
      */
     public function create()
     {
-        return view("admin.Certificate-Create");
+        $candidates = Candidate::all();
+        return view("admin.Certificate-Create", compact("candidates"));
     }
 
     /**
@@ -31,20 +33,10 @@ class CertificateController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'field1' => 'required',
-            'field2' => 'required',
-            'field3' => 'required',
-            'field4' => 'required',
-            'field5' => 'required',
-            'field6' => 'required',
-            'field7' => 'required',
-            'field8' => 'required',
-            'field9' => 'required',
-            'field10' => 'required',
-            'field11' => 'required',
-            'field12' => 'required',
-            'field13' => 'required',
-            'field14' => 'required',
+            'candidate_id' => 'required|min:1',
+            'issue_on' => 'required',
+            'valid_upto' => 'required',
+            'certificate' => 'required',
         ]);
         $filename = Certificate::UploadCertificate($request);
         $data['certificate'] = $filename;
@@ -66,7 +58,8 @@ class CertificateController extends Controller
      */
     public function edit(string $id)
     {
-        $row = Certificate::find($id);
+        // $row = Certificate::find($id);
+        $row = Certificate::CertificateWithCandidate($id);
         return view("admin.Certificate-Edit", compact("row"));
     }
 
@@ -76,20 +69,8 @@ class CertificateController extends Controller
     public function update(Request $request, string $id)
     {
         $data = $request->validate([
-            'field1' => 'required',
-            'field2' => 'required',
-            'field3' => 'required',
-            'field4' => 'required',
-            'field5' => 'required',
-            'field6' => 'required',
-            'field7' => 'required',
-            'field8' => 'required',
-            'field9' => 'required',
-            'field10' => 'required',
-            'field11' => 'required',
-            'field12' => 'required',
-            'field13' => 'required',
-            'field14' => 'required',
+            'issue_on' => 'required',
+            'valid_upto' => 'required',
         ]);
 
         $record = Certificate::find($id);
@@ -111,7 +92,7 @@ class CertificateController extends Controller
      */
     public function delete(string $id)
     {
-        $row = Certificate::find($id);
+        $row = Certificate::CertificateWithCandidate($id);
         return view("admin.Certificate-Delete", compact("row"));
     }
     public function destroy(string $id)

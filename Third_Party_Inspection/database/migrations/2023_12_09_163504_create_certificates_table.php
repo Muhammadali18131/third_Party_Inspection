@@ -12,21 +12,11 @@ return new class extends Migration {
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
-            $table->string("field1");
-            $table->string("field2");
-            $table->string("field3");
-            $table->string("field4");
-            $table->string("field5");
-            $table->string("field6");
-            $table->string("field7");
-            $table->string("field8");
-            $table->string("field9");
-            $table->string("field10");
-            $table->string("field11");
-            $table->string("field12");
-            $table->string("field13");
-            $table->string("field14");
+            $table->unsignedBigInteger("candidate_id");
+            $table->string("issue_on");
+            $table->string("valid_upto");
             $table->string("certificate");
+            $table->foreign('candidate_id')->references('id')->on('candidates')->onDelete('cascade');
             $table->timestamps();
         });
     }

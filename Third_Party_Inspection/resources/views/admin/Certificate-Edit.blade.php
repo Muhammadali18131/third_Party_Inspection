@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+    {{-- @dd($row) --}}
     <section class="section profile">
         <div class="row">
 
@@ -14,7 +15,7 @@
                         <div class="tab-content pt-2">
 
                             <!-- Profile Insert Form -->
-                            <form action="{{ route('certificate-update', ['id' => $row->id]) }}" method="post"
+                            <form action="{{ route('certificate-update', ['id' => $row->certificate_id]) }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -26,118 +27,27 @@
                                                 title="Upload new profile image"><i class="bi bi-upload"></i></a> --}}
                                             {{-- <a href="#" class="btn btn-danger btn-sm"
                                                 title="Remove my profile image"><i class="bi bi-trash"></i></a> --}}
-                                            <span class="badge bg-success mb-3"><a href="{{ asset("assets/certificates/$row->certificate") }}"
-                                                    class="text-light mb-2">Click here to download certificate</a> </span>
+                                            <span class="badge bg-success mb-3"><a
+                                                    href="{{ asset("assets/certificates/$row->certificate") }}"
+                                                    class="text-light mb-2" target='_blank'>Click here to download
+                                                    certificate</a> </span>
                                             <input type="file" name="certificate" class="form-control" id="">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="field1" class="col-md-4 col-lg-3 col-form-label">Field 1</label>
+                                    <label for="issue_on" class="col-md-4 col-lg-3 col-form-label">Issue on</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field1" type="text" class="form-control" id="field1"
-                                            value="{{ $row->field1 }}">
+                                        <input name="issue_on" type="date" class="form-control" id="issue_on" required
+                                            value="{{ $row->issue_on }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="field2" class="col-md-4 col-lg-3 col-form-label">Field 2</label>
+                                    <label for="valid_upto" class="col-md-4 col-lg-3 col-form-label">Valid Upto</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="field2" type="text" class="form-control" id="field2"
-                                            value="{{ $row->field2 }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="field3" class="col-md-4 col-lg-3 col-form-label">Field 3</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field3" type="text" class="form-control" id="field3"
-                                            value="{{ $row->field3 }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="field4" class="col-md-4 col-lg-3 col-form-label">Field 4</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field4" type="text" class="form-control" id="field4"
-                                            value="{{ $row->field4 }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="field5" class="col-md-4 col-lg-3 col-form-label">Field 5</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field5" type="text" class="form-control" id="field5"
-                                            value="{{ $row->field5 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field6" class="col-md-4 col-lg-3 col-form-label">Field 6</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field6" type="text" class="form-control" id="field6"
-                                            value="{{ $row->field6 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field7" class="col-md-4 col-lg-3 col-form-label">Field 7</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field7" type="text" class="form-control" id="field7"
-                                            value="{{ $row->field7 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field8" class="col-md-4 col-lg-3 col-form-label">Field 8</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field8" type="text" class="form-control" id="field8"
-                                            value="{{ $row->field8 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field9" class="col-md-4 col-lg-3 col-form-label">Field 9</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field9" type="text" class="form-control" id="field9"
-                                            value="{{ $row->field9 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field10" class="col-md-4 col-lg-3 col-form-label">Field 10</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field10" type="text" class="form-control" id="field10"
-                                            value="{{ $row->field10 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field11" class="col-md-4 col-lg-3 col-form-label">Field 11</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field11" type="email" class="form-control" id="field11"
-                                            value="{{ $row->field11 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field12" class="col-md-4 col-lg-3 col-form-label">Field 12</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field12" type="text" class="form-control" id="field12"
-                                            value="{{ $row->field12 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field13" class="col-md-4 col-lg-3 col-form-label">Field 13</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field13" type="text" class="form-control" id="field13"
-                                            value="{{ $row->field13 }}">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="field14" class="col-md-4 col-lg-3 col-form-label">Field 14</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <input name="field14" type="text" class="form-control" id="field14"
-                                            value="{{ $row->field14 }}">
+                                        <input name="valid_upto" type="date" class="form-control" id="valid_upto"
+                                            required value="{{ $row->valid_upto }}">
                                     </div>
                                 </div>
 
@@ -148,6 +58,54 @@
                                     <button type="submit" class="btn btn-primary btn-lg">Update</button>
                                 </div>
                             </form>
+
+
+                            <div class="row mt-5">
+                                <h5 class="card-title">Profile Details</h5>
+                                <div class="col-lg-10 col-md-8">
+                                    <div class="col-md-8 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                                            <div class="col-lg-9 col-md-8">{{$row->name}}  {{$row->fname}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label">Phone no</div>
+                                            <div class="col-lg-9 col-md-8">{{$row->phone}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label">Email</div>
+                                            <div class="col-lg-9 col-md-8">{{$row->email}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label">Address</div>
+                                            <div class="col-lg-9 col-md-8">{{$row->address}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label">Iqama no</div>
+                                            <div class="col-lg-9 col-md-8">{{$row->iqama}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 label">Summary</div>
+                                            <div class="col-lg-9 col-md-8">{{$row->summary}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="card">
+                                        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                                            <img src="{{ asset("assets/img/profile-img/$row->profile_img") }}"
+                                                alt="Image Not found!!!" class="bx-square-rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <!-- End Profile Insert Form -->
                         </div>
 

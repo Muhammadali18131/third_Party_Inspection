@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+{{-- @dd($row) --}}
     <section class="section profile">
         <div class="row">
 
@@ -16,36 +17,36 @@
                             <a href="{{ route('certificate-create') }}" class="btn btn-primary">Add new</a>
                         </div>
                         @if ($row->isNotEmpty())
-                        <table class="table table-borderless datatable">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Field 1</th>
-                                    <th scope="col">Field 2</th>
-                                    <th scope="col">Field 3</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($row as $r)
+                            <table class="table table-borderless datatable">
+                                <thead>
                                     <tr>
-                                        <th scope="row">#{{ str_pad($r->id, 5, '0', STR_PAD_LEFT) }}</a></th>
-                                        <td><a href="{{ route('certificate-edit', ['id' => $r->id]) }}"
-                                                class="text-primary">{{ $r->field3 }}</a></td>
-                                        <td>{{ $r->field4 }}</td>
-                                        <td>{{ $r->field5 }}</td>
-                                        <td>
-                                            <a href="{{ route('certificate-edit', ['id' => $r->id]) }}"
-                                                class="btn btn-warning btn-sm">Edit</a>
-                                            <a href="{{ route('certificate-delete', ['id' => $r->id]) }}"
-                                                class="btn btn-danger btn-sm">Delete</a>
-                                        </td>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Candidate</th>
+                                        <th scope="col">Issue on</th>
+                                        <th scope="col">Valid upto</th>
+                                        <th scope="col">Action</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($row as $r)
+                                        <tr>
+                                            <th scope="row">#{{ str_pad($r->id, 5, '0', STR_PAD_LEFT) }}</a></th>
+                                            <td><a href="{{ route('candidate-edit', ['id' => $r->id]) }}"
+                                                    class="text-primary">{{ $r->name }}</a></td>
+                                            <td>{{ $r->issue_on }}</td>
+                                            <td>{{ $r->valid_upto }}</td>
+                                            <td>
+                                                <a href="{{ route('certificate-edit', ['id' => $r->certificate_id]) }}"
+                                                    class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="{{ route('certificate-delete', ['id' => $r->certificate_id]) }}"
+                                                    class="btn btn-danger btn-sm">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         @else
-                        <h3 class="text-danger">No record exist </h3>
+                            <h3 class="text-danger">No record exist </h3>
                         @endif
                     </div>
 
