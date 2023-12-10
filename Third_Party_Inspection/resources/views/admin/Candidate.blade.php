@@ -15,6 +15,8 @@
                         <div class="text-end">
                             <a href="{{ route('candidate-create') }}" class="btn btn-primary">Add new</a>
                         </div>
+                        @if ($row->isNotEmpty())
+                        
                         <table class="table table-borderless datatable">
                             <thead>
                                 <tr>
@@ -29,7 +31,8 @@
                                 @foreach ($row as $r)
                                     <tr>
                                         <th scope="row">#{{ str_pad($r->id, 5, '0', STR_PAD_LEFT) }}</a></th>
-                                        <td><a href="{{ route('candidate-edit', ['id' => $r->id]) }}" class="text-primary">{{ $r->field3 }}</a></td>
+                                        <td><a href="{{ route('candidate-edit', ['id' => $r->id]) }}"
+                                                class="text-primary">{{ $r->field3 }}</a></td>
                                         <td>{{ $r->field4 }}</td>
                                         <td>{{ $r->field5 }}</td>
                                         <td>
@@ -42,7 +45,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                        @else
+                        <h3 class="text-danger">No record exist </h3>
+                        @endif
                     </div>
 
                 </div>

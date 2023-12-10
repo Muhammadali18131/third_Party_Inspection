@@ -26,8 +26,8 @@
                                                 title="Upload new profile image"><i class="bi bi-upload"></i></a> --}}
                                             {{-- <a href="#" class="btn btn-danger btn-sm"
                                                 title="Remove my profile image"><i class="bi bi-trash"></i></a> --}}
-                                            <span class="badge bg-success mb-3"><a href=""
-                                                    class="text-light mb-2">Dwonload {{ $row->certificate }}</a> </span>
+                                            <span class="badge bg-success mb-3"><a href="{{ asset("assets/certificates/$row->certificate") }}"
+                                                    class="text-light mb-2">Click here to download certificate</a> </span>
                                             <input type="file" name="certificate" class="form-control" id="">
                                         </div>
                                     </div>

@@ -95,8 +95,8 @@ class CertificateController extends Controller
         $record = Certificate::find($id);
 
         if ($request->hasFile("certificate")) {
-            if (File::exists(public_path('asssets/certificate/' . $record->certificate))) {
-                File::delete(public_path('asssets/certificate/' . $record->certificate));
+            if (File::exists(public_path('assets/certificates/' . $record->certificate))) {
+                File::delete(public_path('assets/certificates/' . $record->certificate));
             }
             $filename = Certificate::UploadCertificate($request);
             $data['certificate'] = $filename;
@@ -117,6 +117,9 @@ class CertificateController extends Controller
     public function destroy(string $id)
     {
         $record = Certificate::find($id);
+        if (File::exists(public_path('assets/certificates/' . $record->certificate))) {
+            File::delete(public_path('assets/certificates/' . $record->certificate));
+        }
         $record->delete();
         return redirect()->route("certificate")->with("success", "Certificate delete successfully");
     }

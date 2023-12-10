@@ -15,6 +15,7 @@
                         <div class="text-end">
                             <a href="{{ route('certificate-create') }}" class="btn btn-primary">Add new</a>
                         </div>
+                        @if ($row->isNotEmpty())
                         <table class="table table-borderless datatable">
                             <thead>
                                 <tr>
@@ -43,7 +44,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                        @else
+                        <h3 class="text-danger">No record exist </h3>
+                        @endif
                     </div>
 
                 </div>

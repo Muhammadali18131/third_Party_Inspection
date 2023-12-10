@@ -97,8 +97,8 @@ class CandidateController extends Controller
         $record = Candidate::find($id);
 
         if ($request->hasFile("profile_img")) {
-            if (File::exists(public_path('asssets/img/profile-img/' . $record->profile_img))) {
-                File::delete(public_path('asssets/img/profile-img/' . $record->profile_img));
+            if (File::exists(public_path('assets/img/profile-img/' . $record->profile_img))) {
+                File::delete(public_path('assets/img/profile-img/' . $record->profile_img));
             }
             $filename = Candidate::UploadImg($request);
             $data['profile_img'] = $filename;
@@ -119,6 +119,9 @@ class CandidateController extends Controller
     public function destroy(string $id)
     {
         $record = Candidate::find($id);
+        if (File::exists(public_path('assets/img/profile-img/' . $record->profile_img))) {
+            File::delete(public_path('assets/img/profile-img/' . $record->profile_img));
+        }
         $record->delete();
         return redirect()->route("candidate")->with("success", "Candidate delete successfully");
     }
